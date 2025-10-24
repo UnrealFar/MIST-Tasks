@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>About Me - Farhan Ahmed</title>
+    <meta name="description" content="About me page with links to my GitHub repositories. Created for the Student Tech Club.">
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch {}
+        })();
+    </script>
+    <script defer src="index.js"></script>
+    <style>
+        .transition-colors { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+        .dark body { background:#0b1220; color:#e5e7eb; }
+        .dark header, .dark aside, .dark .bg-white, .dark footer { background:#111827; color:#e5e7eb; }
+        .dark .border, .dark .md\:border-r, .dark .border-t { border-color:#1f2937; }
+        .dark a { color:#93c5fd; }
+        .dark a:hover { color:#bfdbfe; }
+        .dark .text-gray-600 { color:#9ca3af; }
+        .dark .text-gray-700 { color:#e5e7eb; }
+        .dark .text-indigo-600 { color:#93c5fd; }
+        .dark .hover\:bg-gray-100:hover { background:#0f172a; }
+        .nav-active { color:#4f46e5; font-weight:700; }
+        .dark .nav-active { color:#93c5fd; }
+        #toTopBtn.hidden { opacity:0; pointer-events:none; transform: translateY(8px); }
+        #toTopBtn { transition: opacity .2s ease, transform .2s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed transition-colors">
+    <header class="bg-white shadow md:hidden transition-colors">
+        <div class="max-w-4xl mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-extrabold">Farhan Ahmed</h1>
+                <div class="flex items-center gap-2">
+                    <button id="themeToggle" class="p-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+                    <button id="menuToggle" class="p-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+                </div>
+            </div>
+            <nav id="mobileNav" class="mt-4 hidden">
+                <a href="#about" class="block text-sm text-indigo-600 mb-2 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">About</a>
+                <a href="#projects" class="block text-sm text-indigo-600 mb-2 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">Projects</a>
+                <a href="#contact" class="block text-sm text-indigo-600 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="hidden md:fixed md:inset-y-0 md:w-64 md:flex md:flex-col md:bg-white md:border-r md:px-6 md:py-8 transition-colors">
+        <div class="flex-shrink-0">
+            <h1 class="text-2xl font-extrabold">Farhan Ahmed</h1>
+            <p class="text-sm text-gray-600 mt-1">Student • Back-end programmer</p>
+        </div>
+        <nav class="mt-8 flex-1">
+            <ul class="space-y-3">
+                <li><a href="#about" class="block text-gray-700 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">About</a></li>
+                <li><a href="#projects" class="block text-gray-700 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">Projects</a></li>
+                <li><a href="#contact" class="block text-gray-700 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggleDesktop" class="mt-6 inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors" title="Toggle theme">🌙 <span class="text-sm">Toggle theme</span></button>
+    </aside>
+
+    <main class="max-w-4xl mx-auto px-6 py-10 md:ml-80">
+        <section id="about" class="bg-white rounded-lg shadow p-6 mb-8 transition-colors">
+            <div class="md:flex md:items-center">
+                <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                    <img src="https://avatars.githubusercontent.com/u/73272708?v=4" alt="Profile" class="rounded-full w-28 h-28 object-cover">
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold">About Me</h2>
+                    <p class="mt-2 text-gray-700"></p>
+                    <ul class="mt-4 text-sm text-gray-600">
+                        <li><strong>I am a </strong> back-end programmer who makes stuff for fun.</li>
+                        <li><strong>I work with</strong> game-projects and make API wrappers.</li>
+                        <li><strong>I am from</strong> Kerala, India</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4 class="text-sm font-semibold">Linguistic Skills</h4>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">C</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">C++</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">Rust</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">JS</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">LabView</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">HTML</span>
+                            <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-8" data-gh-user="UnrealFar">
+            <h3 class="text-lg font-semibold mb-2">Some of my projects-</h3>
+            <input id="projectSearch" type="search" placeholder="Search projects..." class="w-full md:w-1/2 mb-4 px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-colors" />
+            <div id="projectGrid" class="grid gap-4 sm:grid-cols-2"></div>
+        </section>
+
+        <section id="contact" class="bg-white rounded-lg shadow p-6 transition-colors">
+            <h3 class="text-lg font-semibold">Contact</h3>
+            <p class="text-sm text-gray-600 mt-2">If you'd like to collaborate or see more, feel free to reach out.</p>
+            <ul class="mt-4 text-sm text-gray-700">
+                <li class="flex items-center gap-2">
+                    Email:
+                    <a id="emailLink" href="mailto:farhan.mitmpl2025@learner.manipal.edu" class="text-indigo-600 hover:underline">farhan.mitmpl2025@learner.manipal.edu</a>
+                    <button id="copyEmail" class="px-2 py-1 text-xs rounded border border-gray-200 hover:bg-gray-100 transition-colors" title="Copy email">Copy</button>
+                </li>
+                <li>GitHub: <a href="https://github.com/unrealfar" class="text-indigo-600 hover:underline" target="_blank" rel="noopener">@unrealfar</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/farhan-ahmed-15226b361/" class="text-indigo-600 hover:underline" target="_blank" rel="noopener">Farhan Ahmed</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="mt-12 py-6 border-t bg-white transition-colors">
+        <div class="max-w-4xl mx-auto px-6 text-sm text-gray-600">
+            <p>Made by Farhan Ahmed for MIST Task 2</p>
+        </div>
+    </footer>
+
+    <button id="toTopBtn" class="fixed bottom-6 right-6 hidden bg-indigo-600 text-white px-3 py-2 rounded-md shadow hover:bg-indigo-700">↑ Top</button>
+</body>
+</html>
